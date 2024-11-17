@@ -1,0 +1,74 @@
+# Dunst configuration
+
+# Set the default font and size for notifications
+font = MesloLGSDZ Nerd Font 10
+
+# Set the screen edge where notifications appear
+geometry = "300x50-20+20"  # 300x50 size, 20 pixels from right and top
+
+# Timeouts (in milliseconds)
+timeout = 5000             # Default timeout for notifications
+low_timeout = 3000         # Low urgency notifications
+normal_timeout = 5000      # Normal urgency notifications
+critical_timeout = 0       # Critical notifications, no timeout (stays until dismissed)
+
+# Set padding, spacing, and other aesthetics
+padding = 8
+frame_width = 2
+separator_height = 2
+line_height = 1
+
+# Define colors (foreground and background)
+background = "#282a36"
+foreground = "#f8f8f2"
+frame_color = "#6272a4"
+
+# Define colors for different urgencies
+[urgency_low]
+    background = "#44475a"
+    foreground = "#bd93f9"
+
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#f8f8f2"
+
+[urgency_critical]
+    background = "#ff5555"
+    foreground = "#ffffff"
+    frame_color = "#ff79c6"
+
+# Define icon size and positioning
+icon_size = 32
+alignment = center
+
+# Opacity (0 - transparent, 100 - opaque)
+transparency = 20
+
+# Show indicators for progress bars (e.g., volume or brightness notifications)
+progress_bar = true
+progress_bar_frame_width = 1
+progress_bar_max_height = 6
+progress_bar_min_height = 4
+
+# Mouse and keyboard interaction
+mouse_left_click = close_current
+mouse_middle_click = close_all
+mouse_right_click = do_action
+
+# Define shortcuts
+[shortcuts]
+    close_current = ctrl+shift+space
+    close_all = ctrl+shift+q
+    context = ctrl+shift+c
+    history = ctrl+shift+h
+
+# Frame styling for focus
+frame_width = 2
+frame_color = "#6272a4"
+
+# Notification history limit
+history_length = 20
+
+# Enable stacked notifications
+stack_duplicates = true
+

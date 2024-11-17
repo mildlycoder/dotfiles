@@ -1,0 +1,103 @@
+{
+    "height": 33, // Waybar height (to be removed for auto height)
+    "spacing": 8, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces"],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+    },
+    "modules-right": ["pulseaudio", "tray", "backlight", "network", "battery", "clock", "memory"],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+    "interval": 60,
+    "format": "{:%I:%M %p}",           // Default format to display time
+    "format-alt": "{:%A, %dth %B %Y}", // Alternate format to show day, date, month, and year
+    "tooltip": true,                   // Enable tooltip on hover
+    "tooltip-format": "{:%Y-%m-%d}",   // Show full date on hover
+    "on-click": "toggle"               // Toggles between format and format-alt
+},
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% ",
+        "format-bluetooth-muted": "󰝟 ",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "powermenu": {
+    "exec": "~/.config/hypr/powermenu.sh",
+    "return-type": "none",
+    "format": "{} ",
+    "tooltip": "Power Menu",
+    "on-click": "bash ~/.config/hypr/powermenu.sh"
+    },
+
+}
+
